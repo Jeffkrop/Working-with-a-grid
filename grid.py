@@ -1,7 +1,4 @@
-# Jeff Kropelnicki
-# GIS 5578
-# Homework one grid
- 
+
 # INPUT MATRIX------------------
 import numpy as np
 import string
@@ -35,19 +32,6 @@ print"Number of cells " + str(cells)
 print ""
 # ************************************
 
-
-
-
-# ****** PUT YOUR CODE HERE **********
-# Calculate the sum and average
-# and display (ie. print) the values
-# with some text that tells the user
-# what value s/he is looking at;
-# similarly, calculate the min, max,
-# and range of values within grid;
-# there are quite a few built-in list
-# functions that can make your life
-# easy
 Sum = np.sum(grid)   #using numpy to get the sum of the grid
 print ("Sum ") + str(Sum)
 Mean = np.mean(grid)  #using numpy to get the mean of the grid
@@ -62,11 +46,8 @@ print ""
 # ************************************
 
 # USER SELECTED ROW -----------------
-rowID = 1 # hard-coded user input for testing
-
-# What does the following if-clause do?
-# Expand this to include columns
 rowID = int(raw_input("Select which row to print ")) #asks user to pick a row and convert it to int
+
 #print type(rowID)
 if rowID > row - 1 or rowID < 0:    #chacks that the picked number is in range
    print "Row index out of range"         #if not in range print
@@ -94,14 +75,13 @@ print""                       #printing a blank line for spacing
 
 
 #Ask user to pick a X coordinate
-
 inCal = int(raw_input("Pick a X coordinate: ")) #Ask user to pick a X coordinate
 if inCal > col - 1 or inCal < 0:             #checks that the picked number is in range
    print "Column index out of range"   #if not in range print
    print "Setting to default -> the 1st column" #if not in range output row 0 
    inCal = 0
 
-
+#Ask user to pick a Y coordinate
 inRow = int(raw_input("Pick a y coordinate: ")) #Ask user to pick a y coordinate
 if inRow > row - 1 or inRow < 0:    #chacks that the picked number is in range
    print "Row index out of range"         #if not in range print
@@ -109,19 +89,12 @@ if inRow > row - 1 or inRow < 0:    #chacks that the picked number is in range
    inRow = 0                              #starting point 
 
 
-# ************* PUT YOUR CODE HERE *************
+
 
 selCell =  grid_array[inRow, inCal] #sets selCell to the coordinate the user picked from the grid array.
 print "Cell " + str(inRow) + "," + str(inCal )+ " value: ", #Print the row picked and col picked then the number at there coorfinate
 print selCell
 print"" #prints a blank line for spacing 
 
-
-# ************* PUT YOUR CODE HERE *************
-# Use the 'enumerate' function to display the row id/index and the
-# corresponding row values for all rows in the grid
-# You will need to research how the enumerate function works
-# Use the enumerate funtion on your grid to determine a column from a 2D grid
-# Convert the values to a list, which can be converted to a numpy array
 for j, i in enumerate(grid): # this is a loop that counts the rows and gives it a sequence value
    print "row id "+ str(j) + " values:", i #prints row number id the new value and then row. 
